@@ -34,7 +34,7 @@
                                     @foreach ($users as $user)
                                         <?php
                                         $media = $user->getMedia('staff');
-                                        $image = ($media->isEmpty() ? 'https://placeholdit.imgix.net/~text?txtsize=18&txt=NA&w=50&h=50' : url($media[0]->getUrl('thumb')));
+                                        $image = ($media->isEmpty() ? env('DEFAULT_PROFILE_IMAGE') : url($media[0]->getUrl('thumb')));
                                         ?>
                                         <td class="text-center"><img src="{{ $image }}"></td>
                                         <td class="text-center">{{ $user->name}}</td>

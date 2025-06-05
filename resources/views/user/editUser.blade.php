@@ -53,7 +53,7 @@
                                 @if(isset($user))
                                     <?php
                                     $media = $user->getMedia('staff');
-                                    $image = ($media->isEmpty() ? 'https://placeholdit.imgix.net/~text?txtsize=18&txt=NA&w=70&h=70' : url($media[0]->getUrl('form')));
+                                    $image = ($media->isEmpty() ? 'https://assets.imgix.net/examples/clouds.jpg?txt-align=center%2Cmiddle&txt64=SEE&fit=crop&h=70&w=70&blur=100&txt-size=12&monochrome=%237629BB' : url($media[0]->getUrl('form')));
                                     ?>
                                     <div class="col-sm-4">
                                         <div class="form-group">

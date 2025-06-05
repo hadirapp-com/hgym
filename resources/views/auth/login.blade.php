@@ -34,7 +34,7 @@
 <div class="wrapper animated fadeInDown">
     <div class="panel overflow-hidden">
         <div class="bg-grey-900 padding-40 no-margin-bottom font-size-20 color-white text-center text-uppercase">
-            <img src="{{ asset('assets/img/web/logo.png') }}">
+            <img src="https://www.hadirapp.com/_astro/hadirapp-logo-white.htAMPVRA_Zd5ye8.webp" alt="HGym Logo" class="logo"/>
         </div>
         @if (count($errors) > 0)
             <div class="alert alert-danger">
@@ -68,7 +68,7 @@
                 <button type="submit" class="btn btn-dark bg-light-green-500 padding-10 btn-block color-white"><i class="ion-log-in"></i> Sign in</button>
             </div>
         </form>
-        <div class="panel-footer padding-md no-margin no-border bg-grey-900 text-center color-white">&copy; 2016 Gymie by LUBUS</div>
+        <div class="panel-footer padding-md no-margin no-border bg-grey-900 text-center color-white">&copy; 2025 HGym</div>
     </div>
 </div>
 

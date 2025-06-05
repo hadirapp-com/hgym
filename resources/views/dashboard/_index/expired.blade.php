@@ -8,7 +8,7 @@
                 <td>
                     <?php
                     $images = $expired->member->getMedia('profile');
-                    $profileImage = ($images->isEmpty() ? 'https://placeholdit.imgix.net/~text?txtsize=18&txt=NA&w=50&h=50' : url($images[0]->getUrl('thumb')));
+                    $profileImage = ($images->isEmpty() ? env('DEFAULT_PROFILE_IMAGE') : url($images[0]->getUrl('thumb')));
                     ?>
                     <a href="{{ action('MembersController@show',['id' => $expired->member->id]) }}">
                         <img src="{{ $profileImage }}"/></a>

@@ -47,7 +47,7 @@
 <body class="fixed-leftside fixed-header">
 <!-- BEGIN HEADER -->
 <header class="hidden-print">
-    <span class="logo">Gymie</span>
+    <span class="logo">HGym</span>
     <nav class="navbar navbar-static-top">
         <a href="#" class="navbar-btn sidebar-toggle">
             <span class="icon-bar"></span>
@@ -67,7 +67,7 @@
                 <div class="thumb">
                     <?php
                     $media = Auth::user()->getMedia();
-                    $image = ($media->isEmpty() ? 'https://placeholdit.imgix.net/~text?txtsize=18&txt=NA&w=50&h=50' : url($media[0]->getUrl('thumb')));
+                    $image = ($media->isEmpty() ? env('DEFAULT_PROFILE_IMAGE') : url($media[0]->getUrl('thumb')));
                     ?>
                     <img src="{{ $image }}" class="img-circle" alt=""/>
                 </div>

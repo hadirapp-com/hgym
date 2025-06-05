@@ -1,0 +1,8 @@
+services:
+  gymie:
+    build: .
+    container_name: laravel_gymie
+    ports:
+      - "8008:8008"
+    # volumes:
+    #   - ./database.sqlite:/var/www/html/storage/database.sqlite

@@ -65,7 +65,7 @@
                                             </div>
                                             <?php
                                             $images = $member->getMedia('profile');
-                                            $profileImage = ($images->isEmpty() ? 'https://placeholdit.imgix.net/~text?txtsize=22&txt=NA&w=200&h=180' : url($images[0]->getUrl()));
+                                            $profileImage = ($images->isEmpty() ? 'https://assets.imgix.net/examples/clouds.jpg?txt-align=center%2Cmiddle&txt64=SEE&fit=crop&blur=100&txt-size=12&monochrome=%237629BB&w=200&h=180' : url($images[0]->getUrl()));
                                             ?>
                                             <img class="AutoFitResponsive" src="{{ $profileImage }}"/>
                                         </div>
