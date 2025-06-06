@@ -9,7 +9,16 @@ WORKDIR /var/www/app
 RUN wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-pdo_sqlite-7.1.17-r0.apk && \
     wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-mcrypt-7.1.17-r0.apk && \
     wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-tokenizer-7.1.17-r0.apk && \
-    apk add --allow-untrusted php7-pdo_sqlite-7.1.17-r0.apk php7-mcrypt-7.1.17-r0.apk php7-tokenizer-7.1.17-r0.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-exif-7.1.17-r0.apk && \
+    wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-bcmath-7.1.17-r0.apk && \
+    wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-calendar-7.1.17-r0.apk && \
+    apk add --allow-untrusted \
+        php7-pdo_sqlite-7.1.17-r0.apk \
+        php7-mcrypt-7.1.17-r0.apk \
+        php7-tokenizer-7.1.17-r0.apk \
+        php7-exif-7.1.17-r0.apk \
+        php7-bcmath-7.1.17-r0.apk \
+        php7-calendar-7.1.17-r0.apk
 
 # optional pre config
 RUN php artisan key:generate && \
