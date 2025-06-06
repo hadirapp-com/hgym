@@ -8,12 +8,13 @@ WORKDIR /var/www/app
 
 RUN wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-pdo_sqlite-7.1.17-r0.apk && \
     wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-mcrypt-7.1.17-r0.apk && \
-    apk add --allow-untrusted php7-pdo_sqlite-7.1.17-r0.apk php7-mcrypt-7.1.17-r0.apk
+    wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-tokenizer-7.1.17-r0.apk && \
+    apk add --allow-untrusted php7-pdo_sqlite-7.1.17-r0.apk php7-mcrypt-7.1.17-r0.apk php7-tokenizer-7.1.17-r0.apk
 
 # optional pre config
-# RUN php artisan key:generate && \
-#     php artisan migrate:refresh && \
-#     php artisan db:seed
+RUN php artisan key:generate && \
+    php artisan migrate:refresh && \
+    php artisan db:seed
 
 # Expose port 80
 EXPOSE 8008
