@@ -2,14 +2,13 @@ FROM ramadhan/docker-php7.1-nginx-alpine
 
 # Copy your Laravel project
 COPY . /var/www/app
-COPY ./docker/php7/nginx.conf /etc/nginx/conf.d/nginx.conf
 
 # Set the working directory
 WORKDIR /var/www/app
 
 RUN wget https://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-pdo_sqlite-7.1.17-r0.apk && \
     apk add --allow-untrusted php7-pdo_sqlite-7.1.17-r0.apk
-    
+
 # optional pre config
 # RUN php artisan key:generate && \
 #     php artisan migrate:refresh && \
