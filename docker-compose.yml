@@ -3,6 +3,6 @@ services:
     build: .
     container_name: hgym
     ports:
-      - "8008:80"
+      - "8008:8008"
     # volumes:
     #   - .:/var/www/html
