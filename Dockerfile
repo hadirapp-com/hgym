@@ -1,21 +1,22 @@
-FROM lucor/php7-cli:latest
+FROM ramadhan/docker-php7.1-nginx-alpine
 
 # Copy your Laravel project
-COPY . /var/www/html/
+COPY . /var/www/app
+COPY ./docker/php7/app.conf /etc/nginx/conf.d/app.conf
+
+# Set the correct owner
+RUN chown -R www-data:www-data /var/www/app
 
 # Set the working directory
-WORKDIR /var/www/html/
+WORKDIR /var/www/app
 
-RUN wget http://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/php7-fileinfo-7.1.17-r0.apk && \
-    apk add --allow-untrusted php7-fileinfo-7.1.17-r0.apk && \
-    touch storage/database.sqlite && \
-    cp .env.example .env && \
-    php artisan key:generate && \
-    php artisan migrate:refresh && \
-    php artisan db:seed
+# Change user
+USER www-data
 
-# Expose port 8008
-EXPOSE 8008
+# optional pre config
+# RUN php artisan key:generate && \
+#     php artisan migrate:refresh && \
+#     php artisan db:seed
 
-# Start the application
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8008"]
+# Expose port 80
+EXPOSE 80

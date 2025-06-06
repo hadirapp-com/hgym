@@ -1,9 +1,8 @@
 services:
-  gymie:
+  hgym:
     build: .
     container_name: hgym
     ports:
-      - "8008:8008"
+      - "8008:80"
     # volumes:
     #   - .:/var/www/html
-      # - ./database.sqlite:/var/www/html/storage/database.sqlite
